@@ -12,7 +12,11 @@ int main(int argc,char**argv)
 
     QPushButton b;
     b.setText("kill");//给按钮设置内容
-    b.setParent(&w);
+    b.setParent(&w);//指定父对象
+    b.move(100,100);//移动坐标
+
+    QPushButton b1(&w);
+    b1.setText("erpao");
 
     w.show();
 
