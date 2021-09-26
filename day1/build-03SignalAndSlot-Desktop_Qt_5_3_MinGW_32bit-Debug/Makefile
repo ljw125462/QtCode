@@ -158,6 +158,7 @@ Makefile: ../03SignalAndSlot/03SignalAndSlot.pro ../../../tools/Qt5.3.1/5.3/ming
 		../../../tools/Qt5.3.1/5.3/mingw482_32/mkspecs/features/resolve_config.prf \
 		../../../tools/Qt5.3.1/5.3/mingw482_32/mkspecs/features/exclusive_builds_post.prf \
 		../../../tools/Qt5.3.1/5.3/mingw482_32/mkspecs/features/default_post.prf \
+		../../../tools/Qt5.3.1/5.3/mingw482_32/mkspecs/features/c++11.prf \
 		../../../tools/Qt5.3.1/5.3/mingw482_32/mkspecs/features/win32/rtti.prf \
 		../../../tools/Qt5.3.1/5.3/mingw482_32/mkspecs/features/precompile_header.prf \
 		../../../tools/Qt5.3.1/5.3/mingw482_32/mkspecs/features/warn_on.prf \
@@ -277,6 +278,7 @@ Makefile: ../03SignalAndSlot/03SignalAndSlot.pro ../../../tools/Qt5.3.1/5.3/ming
 ..\..\..\tools\Qt5.3.1\5.3\mingw482_32\mkspecs\features\resolve_config.prf:
 ..\..\..\tools\Qt5.3.1\5.3\mingw482_32\mkspecs\features\exclusive_builds_post.prf:
 ..\..\..\tools\Qt5.3.1\5.3\mingw482_32\mkspecs\features\default_post.prf:
+..\..\..\tools\Qt5.3.1\5.3\mingw482_32\mkspecs\features\c++11.prf:
 ..\..\..\tools\Qt5.3.1\5.3\mingw482_32\mkspecs\features\win32\rtti.prf:
 ..\..\..\tools\Qt5.3.1\5.3\mingw482_32\mkspecs\features\precompile_header.prf:
 ..\..\..\tools\Qt5.3.1\5.3\mingw482_32\mkspecs\features\warn_on.prf:

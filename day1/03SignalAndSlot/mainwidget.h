@@ -16,6 +16,7 @@ public:
     void mySlot();
     void changeWin();
     void dealSub();
+    void dealSlot(int,QString);
 
 private:
     QPushButton b1;

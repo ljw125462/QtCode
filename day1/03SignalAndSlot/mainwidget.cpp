@@ -1,5 +1,6 @@
  #include "mainwidget.h"
 #include<QPushButton>
+#include<QDebug>
 
 MainWidget::MainWidget(QWidget *parent)
     : QWidget(parent)
@@ -43,13 +44,50 @@ MainWidget::MainWidget(QWidget *parent)
     connect(&b3,&QPushButton::released,this,&MainWidget::changeWin);
 
     //处理子窗口信号
-    connect(&w,&SubWidget::mySignal,this,&MainWidget::dealSub);
+    void(SubWidget::*funSiginal)()=&SubWidget::mySignal;
+    connect(&w,funSiginal,this,&MainWidget::dealSub);
+
+        void(SubWidget::*testSiginal)(int,QString)=&SubWidget::mySignal;
+    connect(&w,testSiginal,this,&MainWidget::dealSlot);
+
+    //Qt4必须有slots关键字来修饰
+
+    /*
+    Lambda表达式,匿名函数对象
+    C++11增加的新特性，项目文件： CONFIG+=C++11
+    Qt配合信号一起使用，非常方便
+    */
+    QPushButton *b4 = new QPushButton(this);
+    b4->setText("Lambda表达式");
+    b4->move(75,75);
+    int a=66,b=55;
+
+    //=：把外部所有局部变量、类中所有成员以值传递方式
+    //this:类中所有成员以值传递方式
+    //&:把外部所有局部变量，引用符号
+    connect(b4,&QPushButton::clicked,
+            [=](bool isCheck)
+    {
+       qDebug()<<isCheck;
+    }
+            );
+
+
     resize(300,300);
 }
 
 void MainWidget::mySlot()
 {
     b2->setText("kill");
+}
+
+void MainWidget::dealSlot(int a,QString str)
+{
+    //str.toUtf8()->字节数组QByteArray
+    //...data()->QByteArray->char *
+
+    qDebug()<< a << str.toUtf8().data();
+    //qDebug()<< a << str ;
 }
 
 void MainWidget::changeWin()
