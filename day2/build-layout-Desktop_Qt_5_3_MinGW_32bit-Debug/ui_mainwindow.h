@@ -24,6 +24,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
+#include <smallwidget.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -31,8 +32,8 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
+    QGridLayout *gridLayout_4;
     QWidget *widget;
-    QWidget *widget1;
     QGridLayout *gridLayout_2;
     QSpacerItem *horizontalSpacer;
     QLabel *label;
@@ -49,6 +50,7 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QSpacerItem *horizontalSpacer_4;
+    SmallWidget *widget_4;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -57,39 +59,40 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(400, 399);
+        MainWindow->resize(400, 416);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        gridLayout_4 = new QGridLayout(centralWidget);
+        gridLayout_4->setSpacing(6);
+        gridLayout_4->setContentsMargins(11, 11, 11, 11);
+        gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
         widget = new QWidget(centralWidget);
         widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(10, 0, 381, 141));
-        widget1 = new QWidget(widget);
-        widget1->setObjectName(QStringLiteral("widget1"));
-        widget1->setGeometry(QRect(9, 9, 359, 131));
-        gridLayout_2 = new QGridLayout(widget1);
+        gridLayout_2 = new QGridLayout(widget);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        horizontalSpacer = new QSpacerItem(97, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer = new QSpacerItem(123, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout_2->addItem(horizontalSpacer, 0, 0, 1, 1);
 
-        label = new QLabel(widget1);
+        label = new QLabel(widget);
         label->setObjectName(QStringLiteral("label"));
-        label->setMaximumSize(QSize(150, 150));
+        label->setMaximumSize(QSize(100, 100));
         label->setPixmap(QPixmap(QString::fromUtf8("../testui/image/Luffy.png")));
         label->setScaledContents(true);
 
         gridLayout_2->addWidget(label, 0, 1, 1, 1);
 
-        horizontalSpacer_2 = new QSpacerItem(98, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer_2 = new QSpacerItem(123, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout_2->addItem(horizontalSpacer_2, 0, 2, 1, 1);
 
+
+        gridLayout_4->addWidget(widget, 0, 0, 1, 1);
+
         widget_2 = new QWidget(centralWidget);
         widget_2->setObjectName(QStringLiteral("widget_2"));
-        widget_2->setGeometry(QRect(10, 170, 381, 81));
         gridLayout = new QGridLayout(widget_2);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -114,9 +117,11 @@ public:
 
         gridLayout->addWidget(lineEdit_2, 1, 1, 1, 1);
 
+
+        gridLayout_4->addWidget(widget_2, 1, 0, 1, 1);
+
         widget_3 = new QWidget(centralWidget);
         widget_3->setObjectName(QStringLiteral("widget_3"));
-        widget_3->setGeometry(QRect(40, 250, 321, 61));
         gridLayout_3 = new QGridLayout(widget_3);
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
@@ -138,6 +143,14 @@ public:
         horizontalSpacer_4 = new QSpacerItem(64, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout_3->addItem(horizontalSpacer_4, 0, 3, 1, 1);
+
+
+        gridLayout_4->addWidget(widget_3, 2, 0, 1, 1);
+
+        widget_4 = new SmallWidget(centralWidget);
+        widget_4->setObjectName(QStringLiteral("widget_4"));
+
+        gridLayout_4->addWidget(widget_4, 3, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
