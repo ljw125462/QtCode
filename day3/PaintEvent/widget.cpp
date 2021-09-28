@@ -29,7 +29,7 @@ void Widget::paintEvent(QPaintEvent *)
 
     //画背景图
     //p.drawPixmap(0,0,width(),height(),QPixmap("../Image/down.png"));
-    //p.drawPixmap(rect(),QPixmap("../Image/down.png"));
+    p.drawPixmap(rect(),QPixmap("../Image/Frame.jpg"));
 
     //定义画笔
     QPen pen;
