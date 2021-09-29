@@ -1,15 +1,14 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2021-09-28T16:04:47
+# Project created by QtCreator 2021-09-29T13:14:02
 #
 #-------------------------------------------------
 
-QT       += core gui
-QT += network
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = 011_TCP
+TARGET = 04_TCPFile
 TEMPLATE = app
 
 
