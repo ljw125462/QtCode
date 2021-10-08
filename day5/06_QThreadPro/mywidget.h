@@ -17,6 +17,17 @@ public:
     explicit MyWidget(QWidget *parent = 0);
     ~MyWidget();
 
+    void dealSignal();
+    void dealClose();
+
+signals:
+    void startThread();//启动子线程的信号
+
+private slots:
+    void on_ButtonStart_clicked();
+
+    void on_ButtonStop_clicked();
+
 private:
     Ui::MyWidget *ui;
     MyThread *myT;

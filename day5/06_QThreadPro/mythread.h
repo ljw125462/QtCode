@@ -12,10 +12,15 @@ public:
     //线程处理函数
     void myTimeout();
 
+    void setFlag(bool flag=true);
+
 signals:
     void mySignal();
 
 public slots:
+
+private:
+    bool isStop;
 
 };
 
