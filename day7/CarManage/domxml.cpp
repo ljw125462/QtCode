@@ -75,11 +75,55 @@ void DomXML::appendXML(QString filePath, QStringList list)
             //判断根节点下有没有子节点
             if(root.hasChildNodes())  //如果有子节点
             {
+                //查找最后一个子节点
+                QDomElement lastEmt = root.lastChildElement();
+                if(lastEmt.attribute("date") == dateStr)
+                {
+                    writeXML(doc,lastEmt,list);
+                }
+                else
+                {
+                    //创建日期子节点
+                    QDomElement dateEmt = doc.createElement("日期");
+                    //创建date属性
+                    QDomAttr dateAttr = doc.createAttribute("date");
+                    //设置属性的值
+                    dateAttr.setNodeValue(dateStr);
+                    //节点和属性关联
+                    dateEmt.setAttributeNode(dateAttr);
 
+                    //把日期节点追加到根节点上
+                    root.appendChild(dateEmt);
+
+                    //写有效数据
+                    writeXML(doc,dateEmt,list);
+                }
             }
             else
             {
                 //创建日期子节点
+                QDomElement dateEmt = doc.createElement("日期");
+                //创建date属性
+                QDomAttr dateAttr = doc.createAttribute("date");
+                //设置属性的值
+                dateAttr.setNodeValue(dateStr);
+                //节点和属性关联
+                dateEmt.setAttributeNode(dateAttr);
+
+                //把日期节点追加到根节点上
+                root.appendChild(dateEmt);
+
+                //写有效数据
+                writeXML(doc,dateEmt,list);
+            }
+
+            //保存文件
+            isOK = file.open(QIODevice::WriteOnly);
+            if(isOK)
+            {
+                QTextStream stream(&file);
+                doc.save(stream,4);
+                file.close();
             }
         }
         else
@@ -98,4 +142,117 @@ void DomXML::appendXML(QString filePath, QStringList list)
 
 
 
+}
+
+void DomXML::writeXML(QDomDocument &doc, QDomElement &root, QStringList &list)
+{
+    //当前时间获取
+    QDateTime time = QDateTime::currentDateTime();
+    QString timeStr = time.toString("hh-mm-ss");
+
+    //创建时间元素节点
+    QDomElement timeEmt = doc.createElement("时间");
+    QDomAttr timeAttr = doc.createAttribute("time");
+
+    //给属性设置值
+    timeAttr.setNodeValue(timeStr);
+
+    //时间节点元素和属性关联
+    timeEmt.setAttributeNode(timeAttr);
+    //把时间节点加到日期节点后
+    root.appendChild(timeEmt);
+
+    QDomElement factory = doc.createElement("厂家");
+    QDomElement brand = doc.createElement("品牌");
+    QDomElement price = doc.createElement("报价");
+    QDomElement num = doc.createElement("数量");
+    QDomElement total = doc.createElement("金额");
+
+    QDomText text = doc.createTextNode(list.at(0));
+    factory.appendChild(text);
+    text = doc.createTextNode(list.at(1));
+    brand.appendChild(text);
+    text = doc.createTextNode(list.at(2));
+    price.appendChild(text);
+    text = doc.createTextNode(list.at(3));
+    num.appendChild(text);
+    text = doc.createTextNode(list.at(4));
+    total.appendChild(text);
+
+    timeEmt.appendChild(factory);
+    timeEmt.appendChild(brand);
+    timeEmt.appendChild(price);
+    timeEmt.appendChild(num);
+    timeEmt.appendChild(total);
+}
+
+void DomXML::readXML(QString filePath, QStringList &factorylist, QStringList &brandlist, QStringList &pricelist, QStringList &numlist, QStringList &totallist)
+{
+    QFile file(filePath);
+    bool isOK = file.open(QIODevice::ReadOnly);
+    if(true == isOK)//打开成功
+    {
+        //file和xml文档关联
+        QDomDocument doc;
+        isOK = doc.setContent(&file);
+        if(true == isOK)  //关联成功
+        {
+            //获取根节点
+            QDomElement root = doc.documentElement();
+            file.close();
+
+            QDateTime date = QDateTime::currentDateTime();
+            QString dateStr = date.toString("yyyy-MM-dd");
+
+            if(root.hasChildNodes())//有无子节点
+            {
+                //找最后一个子节点
+                QDomElement lastEmt = root.lastChildElement();
+                if(lastEmt.attribute("date") == dateStr)//判断有无当天日期
+                {
+                    //找出当前日期下所有时间的子节点
+                    QDomNodeList list = lastEmt.childNodes();
+                    for (int i = 0;i<list.size();i++) {
+                        //list.at(0).toElement();
+                        //转换为元素，找到时间节点下的所有子节点
+                        QDomNodeList sublist = list.at(i).toElement().childNodes();
+                        //厂家
+                        QString factory = sublist.at(0).toElement().text();
+                        factorylist.append(factory);
+                        //品牌
+                        QString brand = sublist.at(1).toElement().text();
+                        brandlist.append(brand);
+                        //报价
+                        QString price = sublist.at(2).toElement().text();
+                        pricelist.append(price);
+                        //数量
+                        QString num = sublist.at(3).toElement().text();
+                        numlist.append(num);
+                        //总价
+                        QString total = sublist.at(4).toElement().text();
+                        totallist.append(total);
+                    }
+                }
+                else
+                {
+                    cout<<"没有当天数据";
+                    return;
+                }
+            }
+            else
+            {
+                cout<<"没有子节点";
+            }
+        }
+        else
+        {
+            cout << "setContent Error";
+            return;
+        }
+    }
+    else
+    {
+        cout << "ReadOnly Error";
+        return;
+    }
 }

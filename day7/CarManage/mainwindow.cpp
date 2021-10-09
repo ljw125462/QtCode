@@ -6,6 +6,7 @@
 #include<QSqlQueryModel>
 #include<QSqlQuery>
 #include"domxml.h"
+#include<QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -22,6 +23,29 @@ MainWindow::MainWindow(QWidget *parent) :
     initData();
 
     DomXML::createXML("../demo.xml");
+
+    QStringList list;
+    list << "二汽神龙" << "毕加索" << "39" << "1" << "39";
+
+    DomXML::appendXML("../demo.xml",list);
+
+    QStringList factorylist;
+    QStringList brandlist;
+    QStringList pricelist;
+    QStringList numlist;
+    QStringList totallist;
+
+    DomXML::readXML("../demo.xml",factorylist,brandlist,pricelist,numlist,totallist);
+    for (int i =0;i<factorylist.size();i++) {
+        QString str = QString("&1:%2:卖出了%3,单价:%4,总价:%5")
+                .arg(factorylist.at(i))
+                .arg(brandlist.at(i))
+                .arg(numlist.at(i))
+                .arg(pricelist.at(i))
+                .arg(totallist.at(i));
+        qDebug() <<str.toUtf8().data();
+    }
+
 }
 
 MainWindow::~MainWindow()
