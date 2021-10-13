@@ -222,6 +222,7 @@ Makefile: ../02_test/02_test.pro ../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspe
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/qt_config.prf \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/win32-g++/qmake.conf \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/exclusive_builds.prf \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/toolchain.prf \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/default_pre.prf \
@@ -409,6 +410,7 @@ Makefile: ../02_test/02_test.pro ../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspe
 ../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/qt_config.prf:
 ../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/win32-g++/qmake.conf:
 ../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/exclusive_builds.prf:
 ../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/toolchain.prf:
 ../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/default_pre.prf:

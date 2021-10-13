@@ -13,6 +13,7 @@ public:
     Widget(QWidget *parent = 0);
     void change();
     void sendSlot();
+    void change2();
 
     ~Widget();
 signals:

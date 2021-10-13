@@ -17,7 +17,8 @@ Widget::Widget(QWidget *parent)
     botton2->resize(100,50);
     botton2->move(100,200);
 
-    connect(botton2,&QPushButton::released,&Widget::sendSlot);
+    connect(botton2,&QPushButton::released,this,&Widget::sendSlot);
+    connect(botton2,&QPushButton::released,this,&Widget::change2);
 }
 
 void Widget::change()
@@ -28,6 +29,11 @@ void Widget::change()
 void Widget::sendSlot()
 {
     emit Signal();
+}
+
+void Widget::change2()
+{
+    w2.hide();
 }
 
 Widget::~Widget()
