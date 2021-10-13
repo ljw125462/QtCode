@@ -75,7 +75,7 @@ void StudentDialog::on_insertButton_clicked()
         return;
     }
     double score = ui->scoreEdit->text().toDouble();
-    if(score < 0 && score > 100)
+    if(score < 0 || score > 100)
     {
         QMessageBox::critical(this,"ERROR","分数输入有误");
         return;
@@ -97,6 +97,12 @@ void StudentDialog::on_deleteButton_clicked()
     QSqlQuery query;
     int id = ui->idEdit->text().toInt();
     QString str = QString("delete from student where id = %1").arg(id);
+
+    if(QMessageBox::question(this,"提示","确认删除？",QMessageBox::Yes,QMessageBox::No)==QMessageBox::No)
+    {
+        return;
+    }
+
     if(query.exec(str) == false)
     {
         qDebug() << str;
