@@ -15,8 +15,12 @@ public:
     explicit denglu(QWidget *parent = nullptr);
     ~denglu();
 
+// public slots:
+//    void close();
+
 private:
     Ui::denglu *ui;
+    QVector<bool> IsShow;
 };
 
 #endif // DENGLU_H

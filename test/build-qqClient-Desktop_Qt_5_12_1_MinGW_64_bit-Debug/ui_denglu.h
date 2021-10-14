@@ -30,7 +30,7 @@ public:
     {
         if (denglu->objectName().isEmpty())
             denglu->setObjectName(QString::fromUtf8("denglu"));
-        denglu->setEnabled(false);
+        denglu->setEnabled(true);
         denglu->resize(300, 700);
         denglu->setMaximumSize(QSize(300, 700));
         vLayout = new QGridLayout(denglu);

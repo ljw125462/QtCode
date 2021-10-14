@@ -222,6 +222,7 @@ Makefile: ../qqClient/qqClient.pro ../../../tools/Qt5.12.1/5.12.1/mingw73_64/mks
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/qt_config.prf \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/win32-g++/qmake.conf \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/exclusive_builds.prf \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/toolchain.prf \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/default_pre.prf \
@@ -247,6 +248,7 @@ Makefile: ../qqClient/qqClient.pro ../../../tools/Qt5.12.1/5.12.1/mingw73_64/mks
 		../qqClient/qqClient.pro \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/lib/Qt5Widgets.prl \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/lib/Qt5Gui.prl \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/lib/Qt5Network.prl \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/lib/Qt5Core.prl \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/lib/qtmaind.prl
 	$(QMAKE) -o Makefile ..\qqClient\qqClient.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -409,6 +411,7 @@ Makefile: ../qqClient/qqClient.pro ../../../tools/Qt5.12.1/5.12.1/mingw73_64/mks
 ../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/qt_config.prf:
 ../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/win32-g++/qmake.conf:
 ../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/exclusive_builds.prf:
 ../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/toolchain.prf:
 ../../../tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/features/default_pre.prf:
@@ -434,6 +437,7 @@ Makefile: ../qqClient/qqClient.pro ../../../tools/Qt5.12.1/5.12.1/mingw73_64/mks
 ../qqClient/qqClient.pro:
 ../../../tools/Qt5.12.1/5.12.1/mingw73_64/lib/Qt5Widgets.prl:
 ../../../tools/Qt5.12.1/5.12.1/mingw73_64/lib/Qt5Gui.prl:
+../../../tools/Qt5.12.1/5.12.1/mingw73_64/lib/Qt5Network.prl:
 ../../../tools/Qt5.12.1/5.12.1/mingw73_64/lib/Qt5Core.prl:
 ../../../tools/Qt5.12.1/5.12.1/mingw73_64/lib/qtmaind.prl:
 qmake: FORCE
