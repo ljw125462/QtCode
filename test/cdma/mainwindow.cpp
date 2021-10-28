@@ -8,6 +8,7 @@
 #include <QTableView>
 #include "scriptdlg.h"
 
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -85,6 +86,7 @@ void MainWindow::createActions()
 
     scriptAction = new QAction("执行脚本");
     scriptAction->setShortcut(tr("Ctrl+p"));
+    scriptAction->setEnabled(false);
     connect(scriptAction,SIGNAL(triggered()),this,SLOT(on_script()));
 
     cascadeAction = new QAction("层叠",this);
@@ -156,20 +158,40 @@ void MainWindow::on_login()
 
     if(dlg.islogin)//代表用户点击了dlg对话框的登录按钮
     {
-        if((dlg.userid == "ljw")&&(dlg.passwd=="123456"))
+        int res = db.sql_connect(dlg.hostip.toStdString().data(),
+                       dlg.userid.toStdString().data(),
+                       dlg.passwd.toStdString().data(),
+                       dlg.dbname.toStdString().data());
+        if(res == -1)
         {
-            QMessageBox::information(this,"提示","登录成功");
+            QMessageBox::information(this,"登录失败",db.geterror());
         }
         else {
-            QMessageBox::information(this,"提示","登录失败");
+            QMessageBox::information(this,"","登录成功");
+            scriptAction->setEnabled(true);
         }
+
+//        if((dlg.userid == "ljw")&&(dlg.passwd=="123456"))
+//        {
+//            QMessageBox::information(this,"提示","登录成功");
+//        }
+//        else {
+//            QMessageBox::information(this,"提示","登录失败");
+//        }
     }
 }
 
 void MainWindow::on_logout()
 {
-    qDebug()<<"点击了注销";
-
+    QMessageBox::StandardButton button = QMessageBox::question(this,"注销","确认注销？",QMessageBox::Yes|QMessageBox::No);
+    if(button==QMessageBox::Yes)
+    {
+        db.sql_disconnect();
+        scriptAction->setEnabled(false);
+    }
+    else {
+        return;
+    }
 }
 
 void MainWindow::on_exit()
@@ -182,6 +204,51 @@ void MainWindow::on_script()
     scriptDlg dlg;
     dlg.exec();
     //showView();
+
+//    if(db.sql_exec("delete from brand where name = '毕加索'")==-1)
+//    {
+//        QMessageBox::information(this,"exec失败",db.geterror());
+//    }else {
+//        QMessageBox::information(this,"","exec成功");
+//}
+    if(dlg.islogin)//如果用户点击了执行按钮才执行下面的代码
+    {
+        script_msg(dlg.SQL.toStdString().data());
+    }
+
+}
+
+void MainWindow::script_msg(const char *SQL)
+{
+    int res = 0;
+    if((strncmp(SQL,"SELECT",6) == 0)||(strncmp(SQL,"select",6) == 0))
+    {
+        QStandardItemModel *modul = NULL;
+        res = db.sql_open(SQL,&modul);//如果是SELECT，那么执行sql_open函数
+
+        QTableView *view1 = new QTableView;
+        view1->setAttribute(Qt::WA_DeleteOnClose);//关闭这个widget的时候，自动释放widget
+        view1->setWindowIcon(windowIcon());//设置图标
+        mdiArea->addSubWindow(view1);//将widget加入mdiArea，以便widget成为子窗口
+        view1->setWindowTitle("SQL");//设置widget标题
+        view1->setStyleSheet("border-image:url(D:/QtCode/test/cdma/res/img_bg_level_1.jpg);");
+
+        //view1继承自widget，如果没有model，那么view不会显示任何数据。
+        view1->setModel(modul);
+        view1->show();
+        mdiArea->activeSubWindow()->resize(width()-100,height()-100);
+    }
+    else {
+        res = db.sql_exec(SQL);
+    }
+    if(res == -1)
+    {
+        QMessageBox::information(this,"执行失败",db.geterror());
+    }
+    else {
+        QMessageBox::information(this,"提示","执行成功");
+        scriptAction->setEnabled(true);
+    }
 }
 
 void MainWindow::cascadeSubWindow()

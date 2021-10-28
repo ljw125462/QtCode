@@ -71,7 +71,6 @@ loginDlg::loginDlg(QWidget *parent) :
 
 void loginDlg::loginBtnOnclick()
 {
-    qDebug() <<"点击了登录按钮";
     this->userid = lineEditUserID->text();
     this->passwd = lineEditPasswd->text();
     this->dbname = lineEditDBName->text();

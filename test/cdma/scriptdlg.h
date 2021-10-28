@@ -13,7 +13,7 @@ class scriptDlg : public QDialog
 public:
     explicit scriptDlg(QWidget *parent = nullptr);
     QString SQL;
-    bool isok;
+    bool islogin;
 
 signals:
 

@@ -8,6 +8,9 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+INCLUDEPATH += $$quote(C:/Program Files/MySQL/MySQL Server 5.7/include)
+LIBS += -L$$quote(C:/Program Files/MySQL/MySQL Server 5.7/lib) -llibmysql
+
 TARGET = cdma
 TEMPLATE = app
 
@@ -28,12 +31,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     logindlg.cpp \
-    scriptdlg.cpp
+    scriptdlg.cpp \
+    mymysql.cpp
 
 HEADERS += \
         mainwindow.h \
     logindlg.h \
-    scriptdlg.h
+    scriptdlg.h \
+    mymysql.h
 
 FORMS += \
         mainwindow.ui

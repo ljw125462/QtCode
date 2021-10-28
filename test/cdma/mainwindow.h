@@ -7,6 +7,7 @@
 #include <QAction>
 #include <QCloseEvent>
 #include <QMdiArea>
+#include "mymysql.h"
 
 namespace Ui {
 class MainWindow;
@@ -23,6 +24,7 @@ public:
     void closeEvent(QCloseEvent *event);
 
 private:
+    mymysql db;
     Ui::MainWindow *ui;
     QMenu *adminMenu;
     QMenu *dataMenu;
@@ -45,6 +47,7 @@ private:
     void createActions();
     void showsub();
     void showView();
+    void script_msg(const char *SQL);
 
 public slots:
         //管理页槽函数
