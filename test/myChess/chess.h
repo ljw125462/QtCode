@@ -36,7 +36,7 @@ private:
     //格子宽高，画线起始点
     int gridWidth,gridHeight,startX,startY;
 
-    int ChessData[9][9];
+    int ChessData[8][8];
 
     void Init();
     void InitChess();

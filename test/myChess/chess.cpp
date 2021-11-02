@@ -31,14 +31,14 @@ void Chess::paintEvent(QPaintEvent *)
     pen1.setWidth(2);
     painter.setPen(pen1);
     for (int i = 0;i<9;i++) {
-        painter.drawLine(startX,startY*(1+i),9*gridWidth,gridHeight*(1+i));
-        painter.drawLine(startX*(1+i),startY,gridWidth*(1+i),gridHeight*9);
+        painter.drawLine(startX,startY+i*gridHeight,9*gridWidth,gridHeight*i+startY);
+        painter.drawLine(startX+i*gridWidth,startY,startX+i*gridWidth,gridHeight*9);
     }
 
     //画棋子
     QString chessFilename;
-    for (int i = 0;i<9;i++) {
-        for (int j= 0;j<9;j++) {
+    for (int i = 0;i<8;i++) {
+        for (int j= 0;j<8;j++) {
             if(ChessData[i][j] == White)
             {
                 chessFilename = ":/image/White.png";
@@ -67,9 +67,9 @@ void Chess::mousePressEvent(QMouseEvent *event)
 {
     int x = event->x();
     int y = event->y();
-    if(x>=startX && (x <= startX+8*gridWidth))
+    if(x>=startX && (x <= startX+7*gridWidth))
     {
-        if(y>=startY && (y<=startY + 8*gridHeight))
+        if(y>=startY && (y<=startY + 7*gridHeight))
         {
             int i = 0;
             int j = 0;
@@ -92,7 +92,7 @@ void Chess::ChangeLineColor(const QColor color)
 
 void Chess::setChessStatus(void *p)
 {
-    memcpy(ChessData,p,sizeof(int)*9*9);
+    memcpy(ChessData,p,sizeof(int)*8*8);
     this->update();
 }
 
@@ -108,9 +108,10 @@ void Chess::InitChess()
 {
     //初始化棋盘数据
     //memset(ChessData,0,sizeof (int)*81);
-    for (int i = 0;i<9;i++) {
-        for (int j= 0;j<9;j++) {
+    for (int i = 0;i<8;i++) {
+        for (int j= 0;j<8;j++) {
             ChessData[i][j]=Empty;
         }
     }
+
 }
