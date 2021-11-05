@@ -349,7 +349,7 @@
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">border-image: url(:/image/sunny.png);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string/>
@@ -371,8 +371,14 @@
      </item>
      <item row="1" column="6" colspan="3">
       <widget class="QLabel" name="label_13">
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>150</height>
+        </size>
+       </property>
        <property name="styleSheet">
-        <string notr="true">border-image: url(:/image/cloudy.png);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string/>
@@ -394,8 +400,14 @@
      </item>
      <item row="1" column="11" colspan="4">
       <widget class="QLabel" name="label_17">
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>150</height>
+        </size>
+       </property>
        <property name="styleSheet">
-        <string notr="true">border-image: url(:/image/rain.png);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string/>

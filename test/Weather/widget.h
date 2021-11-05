@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QNetworkAccessManager>
+#include <QStringList>
 
 namespace Ui {
 class Widget;
@@ -17,6 +18,8 @@ public:
     ~Widget();
 
     QNetworkAccessManager *netManager;
+    QStringList iconList;
+    void iconPath();
 
 private:
     Ui::Widget *ui;

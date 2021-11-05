@@ -104,13 +104,15 @@ debug/qrc_image.cpp: ../Weather/image.qrc \
 		../Weather/image/WeatherBackground.jpg \
 		../Weather/image/location2.jpg \
 		../Weather/image/6256f193618908e.jpg \
-		../Weather/image/cloudy.png \
+		../Weather/image/2.png \
 		../Weather/image/location5.jpg \
+		../Weather/image/1.png \
+		../Weather/image/5.png \
 		../Weather/image/location4.jpg \
 		../Weather/image/location6.png \
-		../Weather/image/rain.png \
+		../Weather/image/4.png \
 		../Weather/image/location3.jpg \
-		../Weather/image/sunny.png \
+		../Weather/image/3.png \
 		../Weather/image/location.jpg
 	D:\tools\Qt5.12.1\5.12.1\mingw73_64\bin\rcc.exe -name image ..\Weather\image.qrc -o debug\qrc_image.cpp
 
@@ -227,6 +229,32 @@ debug/moc_widget.cpp: ../Weather/widget.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/qfiledevice.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtGui/qvector2d.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtGui/qtouchdevice.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/QNetworkAccessManager \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qnetworkaccessmanager.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qtnetwork-config.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qnetworkrequest.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QSharedDataPointer \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QString \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QUrl \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QVariant \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QVector \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QObject \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/QSslConfiguration \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qsslconfiguration.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qsslsocket.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qtcpsocket.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qabstractsocket.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qsslerror.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qsslcertificate.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/qcryptographichash.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/qdatetime.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qssl.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QFlags \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QMetaType \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QStringList \
 		debug/moc_predefs.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/bin/moc.exe
 	D:\tools\Qt5.12.1\5.12.1\mingw73_64\bin\moc.exe $(DEFINES) --include D:/QtCode/test/build-Weather-Desktop_Qt_5_12_1_MinGW_64_bit-Debug/debug/moc_predefs.h -ID:/tools/Qt5.12.1/5.12.1/mingw73_64/mkspecs/win32-g++ -ID:/QtCode/test/Weather -ID:/tools/Qt5.12.1/5.12.1/mingw73_64/include -ID:/tools/Qt5.12.1/5.12.1/mingw73_64/include/QtWidgets -ID:/tools/Qt5.12.1/5.12.1/mingw73_64/include/QtGui -ID:/tools/Qt5.12.1/5.12.1/mingw73_64/include/QtANGLE -ID:/tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork -ID:/tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore -I. -ID:/tools/Qt5.12.1/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -ID:/tools/Qt5.12.1/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -ID:/tools/Qt5.12.1/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -ID:/tools/Qt5.12.1/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -ID:/tools/Qt5.12.1/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -ID:/tools/Qt5.12.1/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Weather\widget.h -o debug\moc_widget.cpp
@@ -358,13 +386,41 @@ debug/main.o: ../Weather/main.cpp ../Weather/widget.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/qfiledevice.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtGui/qvector2d.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtGui/qtouchdevice.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/QNetworkAccessManager \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qnetworkaccessmanager.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qtnetwork-config.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qnetworkrequest.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QSharedDataPointer \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QString \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QUrl \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QVariant \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QVector \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QObject \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/QSslConfiguration \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qsslconfiguration.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qsslsocket.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qtcpsocket.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qabstractsocket.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qsslerror.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qsslcertificate.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/qcryptographichash.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/qdatetime.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qssl.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QFlags \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QMetaType \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QStringList \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtWidgets/QApplication \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtWidgets/qapplication.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/qcoreapplication.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/qeventloop.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtGui/qguiapplication.h \
-		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtGui/qinputmethod.h
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtGui/qinputmethod.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtGui/QIcon \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtGui/qicon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\Weather\main.cpp
 
 debug/widget.o: ../Weather/widget.cpp ../Weather/widget.h \
@@ -471,8 +527,33 @@ debug/widget.o: ../Weather/widget.cpp ../Weather/widget.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/qfiledevice.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtGui/qvector2d.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtGui/qtouchdevice.h \
-		ui_widget.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/QNetworkAccessManager \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qnetworkaccessmanager.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qtnetwork-config.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qnetworkrequest.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QSharedDataPointer \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QString \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QUrl \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QVariant \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QVector \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QObject \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/QSslConfiguration \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qsslconfiguration.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qsslsocket.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qtcpsocket.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qabstractsocket.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qsslerror.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qsslcertificate.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/qcryptographichash.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/qdatetime.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qssl.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QFlags \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QMetaType \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QStringList \
+		ui_widget.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtWidgets/QApplication \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtWidgets/qapplication.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/qcoreapplication.h \
@@ -490,7 +571,24 @@ debug/widget.o: ../Weather/widget.cpp ../Weather/widget.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtWidgets/qlabel.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtWidgets/qframe.h \
 		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtWidgets/QSpacerItem \
-		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtWidgets/QVBoxLayout
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtWidgets/QVBoxLayout \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/QNetworkRequest \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/QNetworkReply \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtNetwork/qnetworkreply.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QIODevice \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QTextCodec \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/qtextcodec.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QDebug \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QJsonParseError \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/qjsondocument.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/qjsonvalue.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QJsonObject \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/qjsonobject.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QJsonDocument \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtGui/QPixmap \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/QJsonArray \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtCore/qjsonarray.h \
+		../../../tools/Qt5.12.1/5.12.1/mingw73_64/include/QtGui/QPalette
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\widget.o ..\Weather\widget.cpp
 
 debug/qrc_image.o: debug/qrc_image.cpp 
